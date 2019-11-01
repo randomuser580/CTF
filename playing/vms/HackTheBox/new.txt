@@ -1,0 +1,11 @@
+HTTP/1.1 301 Moved Permanently
+Date: Wed, 13 Feb 2019 02:04:10 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: max-age=3600
+Expires: Wed, 13 Feb 2019 03:04:10 GMT
+Location: https://www.hackthebox.eu/js/inviteapi.min.js
+X-Content-Type-Options: nosniff
+Server: cloudflare
+CF-RAY: 4a83b905fb8409fa-ATL
+

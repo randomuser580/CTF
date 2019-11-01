@@ -1,0 +1,54 @@
+Challenge: genericpyjail
+
+When has a blacklist of insecure keywords EVER failed?
+
+This challenge had a long blacklist of words/functions which would cause the connection to end, but wasnt hard to get around
+
+BLACKLIST.txt
+
+import
+ast
+eval
+=
+pickle
+os
+subprocess
+i love blacklisting words!
+input
+sys
+windows users
+print
+execfile
+hungrybox
+builtins
+open
+most of these are in here just to confuse you
+_
+dict
+[
+>
+<
+:
+;
+]
+exec
+hah almost forgot that one
+for
+@
+dir
+yah have fun
+file
+
+
+___________
+
+Solution:
+
+some thinking and testing made me realize that eval will allow me to concatenate strings and then send that to the intepreter 
+SOOOOO
+
+"impor" + "t o" + "s"
+"prin" + "t(o" + "s.getcwd())" --- this outputs root but was how I tested the functionality
+"prin" + "t(o" + "s.sy" + "stem('cat flag.txt'))" -- gives the flag
+
+flag{bl4ckl1sts_w0rk_gre3344T!}

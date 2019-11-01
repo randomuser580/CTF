@@ -1,0 +1,59 @@
+Challenge
+Satellite
+Category: Networking
+
+Placing your ship in range of the Osmiums, you begin to receive signals. 
+Hoping that you are not detected, because it's too late now, 
+you figure that it may be worth finding out what these signals mean and what information might be "borrowed" from them.
+Can you hear me Captain Tim? Floating in your tin can there? 
+Your tin can has a wire to ground control? Find something to do that isn't staring at the Blue Planet.
+
+
+Solution
+
+Once again we have a zip file (which I imagine the rest of the challenges will also have) and we get two files when we unzip it
+
+-rwxr-xr-x 1 root root 3315571 Dec 31  1979 init_sat
+-rw-r--r-- 1 root root 2866350 Dec 31  1979 README.pdf
+
+A PDF and another executable. 
+When I executed the file a prompt showed up:
+"Enter the name of the satellite to connect to or 'exit' to quit"
+
+So I opened up the PDF to see the word osmium written on a picture of satellite which also has init_sat written on it.
+I gave "osmium" as an input to the program and it responds with this:
+
+Enter the name of the satellite to connect to or 'exit' to quit
+osmium
+Establishing secure connection to osmium
+ satellite...
+Welcome. Enter (a) to display config data, (b) to erase all data or (c) to disconnect
+
+Username: brewtoot password: ********************	166.00 IS-19 2019/05/09 00:00:00	
+Swath 640km	Revisit capacity twice daily, anywhere Resolution panchromatic: 30cm multispectral: 1.2m	
+Daily acquisition capacity: 220,000km²	
+Remaining config data written to: https://docs.google.com/document/d/14eYPluD_pi3824GAFanS29tWdTcKxP_XUxx7e303-3E
+
+
+When we open up that google doc link we get some base64 encoded data:
+VXNlcm5hbWU6IHdpcmVzaGFyay1yb2NrcwpQYXNzd29yZDogc3RhcnQtc25pZmZpbmchCg==
+
+
+Which decodes to 
+
+"Username: wireshark-rocks
+Password: start-sniffing!"
+
+So its time to open up wireshark and do a packet capture before executing the binary again.
+
+Once I did this, there were 2 IP addresses which looked of interest to me 
+"34.95.71.207", and "34.76.101.29" 
+so I ran nmap on both of them in the background - the first of which seemed to be the server the CTF is hosted on
+
+BUT when we actually look into the packets we see our flag in one of them!
+
+"Username: brewtoot password: CTF{4efcc72090af28fd33a2118985541f92e793477f}	
+166.00 IS-19 2019/05/09 00:00:00	
+Swath 640km	Revisit capacity twice daily, anywhere Resolution panchromatic: 30cm multispectral: 1.2m	
+Daily acquisition capacity: 220,000kmÂ²	Remaining config data written to: 
+https://docs.google.com/document/d/14eYPluD_pi3824GAFanS29tWdTcKxP_XUxx7e303-3E"

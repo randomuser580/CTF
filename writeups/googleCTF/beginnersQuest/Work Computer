@@ -1,0 +1,673 @@
+Challenge: Work Computer
+Category: sandbox
+
+Description:
+
+With the confidence of conviction and decision making skills that made you a contender for Xenon's Universal takeover council, now disbanded, you forge ahead to the work computer.
+This machine announces itself to you, surprisingly with a detailed description of all its hardware and peripherals.
+Your first thought is "Why does the display stand need to announce its price? 
+And exactly how much does 999 dollars convert to in Xenonivian Bucklets?"
+You always were one for the trivialities of things.
+Also presented is an image of a fascinating round and bumpy creature, labeled "Cauliflower for cWo" - are "Cauliflowers" earthlings?
+Your 40 hearts skip a beat - these are not the strange unrelatable bipeds you imagined earthings to be.. this looks like your neighbors back home. Such curdley lobes. Will it be at the party?
+SarahH, who appears to be  a programmer with several clients, has left open a terminal.  Oops.  Sorry clients!  
+Aliens will be poking around attempting to access your networks.. looking for Cauliflower.   
+That is, *if* they can learn to navigate such things.
+
+readme.ctfcompetition.com 1337
+
+
+Solution
+Were greeted with a shell so im guessing its time to escape.
+
+> help
+Alien's shell
+Type program names and arguments, and hit enter.
+The following are built in:
+  cd
+  help
+  exit
+Use the man command for information on other programs.
+
+Checking for basic commands we have access to and what directories we can list
+This one isnt a writeup as much as testing what different utilities do and seeing what I can make sense of.
+READ THROUGH THE ENTIRE THING TO SEE THE PROCESS I TOOK!!!
+
+> cd  
+aliensh: expected argument to "cd"
+> cd ./
+> ls
+ORME.flag
+README.flag
+> echo README.flag
+README.flag
+> echo ./README.flag
+./README.flag
+> cat
+error: No such file or directory
+> echo ./*
+./*
+> ls  
+ORME.flag
+README.flag
+> ls O	
+ls: O: No such file or directory
+> ls ORME.flag
+ORME.flag
+> file ORME.flag
+error: No such file or directory
+> file 
+error: No such file or directory
+> less
+error: No such file or directory
+> more
+error: No such file or directory
+> vim
+error: No such file or directory
+> vi
+error: No such file or directory
+> echo ./*
+./*
+
+> cd ../bin
+> ls
+arch
+busybox
+chgrp
+chown
+conspy
+date
+df
+dmesg
+dnsdomainname
+dumpkmap
+echo
+false
+fdflush
+fsync
+getopt
+hostname
+ionice
+iostat
+ipcalc
+kill
+login
+ls
+lzop
+makemime
+mkdir
+mknod
+mktemp
+mount
+mountpoint
+mpstat
+netstat
+nice
+pidof
+ping
+ping6
+pipe_progress
+printenv
+ps
+pwd
+reformime
+rm
+rmdir
+run-parts
+setpriv
+setserial
+shell
+sleep
+stat
+stty
+sync
+tar
+true
+umount
+uname
+usleep
+watch
+> ls -a
+.
+..
+arch
+busybox
+chgrp
+chown
+conspy
+date
+df
+dmesg
+dnsdomainname
+dumpkmap
+echo
+false
+fdflush
+fsync
+getopt
+hostname
+ionice
+iostat
+ipcalc
+kill
+login
+> cd . 
+> cd ..
+> ls
+bin
+challenge
+dev
+etc
+home
+lib
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+> cd bin
+> ls
+arch
+busybox
+chgrp
+chown
+conspy
+date
+df
+dmesg
+dnsdomainname
+dumpkmap
+echo
+false
+fdflush
+fsync
+getopt
+hostname
+ionice
+iostat
+ipcalc
+kill
+login
+ls
+lzop
+makemime
+mkdir
+mknod
+mktemp
+mount
+mountpoint
+mpstat
+netstat
+nice
+pidof
+ping
+ping6
+pipe_progress
+printenv
+ps
+pwd
+reformime
+rm
+rmdir
+run-parts
+setpriv
+setserial
+shell
+sleep
+stat
+stty
+sync
+tar
+true
+umount
+uname
+usleep
+watch
+> printenv
+SHLVL=1
+PWD=/challenge
+> $
+error: No such file or directory
+> dumpkmap
+dumpkmap: can't open console
+> nice
+19
+> df
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/sda1             20145724   7303332  12826008  36% /
+none                      4096         0      4096   0% /tmp
+none                      4096         0      4096   0% /dev
+none                      4096         0      4096   0% /dev/shm
+none                      4096         8      4088   0% /challenge
+> man df
+error: No such file or directory
+> df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/sda1                19.2G      7.0G     12.2G  36% /
+none                      4.0M         0      4.0M   0% /tmp
+none                      4.0M         0      4.0M   0% /dev
+none                      4.0M         0      4.0M   0% /dev/shm
+none                      4.0M      8.0K      4.0M   0% /challenge
+       
+> tty
+not a tty
+> printf
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: printf FORMAT [ARG]...
+
+Format and print ARG(s) according to FORMAT (a-la C printf)
+> printf /challenge/*
+/challenge/*> 
+> 
+> conspy
+conspy: can't open '/dev/vcsa': No such file or directory
+> cd ..
+
+> busybox
+busybox can not be called for alien reasons.
+> sudo
+error: No such file or directory
+> mpstat
+Linux 4.15.0-1023-gcp (jail-0)	07/14/19	_x86_64_	(2 CPU)
+
+18:27:47     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest   %idle
+18:27:47     all    0.67    0.02    0.50    0.02    0.00    0.01    0.00    0.00   98.79
+> netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node Path
+> ls
+ORME.flag
+README.flag
+> cd ..
+> ls
+bin
+challenge
+dev
+etc
+home
+lib
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+> ls root
+ls: can't open 'root': Permission denied
+> ls run
+> ls run/*
+ls: run/*: No such file or directory
+> ls tmp
+> ls dev
+shm
+> ls etc
+TZ
+alpine-release
+apk
+ca-certificates
+ca-certificates.conf
+conf.d
+crontabs
+fstab
+group
+hostname
+hosts
+init.d
+inittab
+inputrc
+issue
+logrotate.d
+modprobe.d
+modules
+modules-load.d
+motd
+mtab
+network
+opt
+os-release
+passwd
+periodic
+profile
+profile.d
+protocols
+securetty
+services
+shadow
+shells
+ssl
+sysctl.conf
+sysctl.d
+terminfo
+udhcpd.conf
+> ls -al etc
+total 196
+drwxr-xr-x   17 65534    65534         4096 Jun 13 14:28 .
+drwxr-xr-x   20 0        0             4096 Jun 13 14:28 ..
+-rw-r--r--    1 65534    65534            4 Jan 23 20:46 TZ
+-rw-r--r--    1 65534    65534            6 May  9 20:49 alpine-release
+drwxr-xr-x    4 65534    65534         4096 Jun 13 14:28 apk
+drwxr-xr-x    3 65534    65534         4096 Jun 13 12:48 ca-certificates
+-rw-r--r--    1 65534    65534         6285 Jan 29 16:27 ca-certificates.conf
+drwxr-xr-x    2 65534    65534         4096 May  9 20:49 conf.d
+drwxr-xr-x    2 65534    65534         4096 May  9 20:49 crontabs
+-rw-r--r--    1 65534    65534           89 Jan 23 20:46 fstab
+-rw-r-----    1 65534    65534          726 Jun 12 13:57 group
+-rw-r--r--    1 65534    65534           10 Jan 23 20:46 hostname
+-rw-r--r--    1 65534    65534           79 Jan 23 20:46 hosts
+drwxr-xr-x    2 65534    65534         4096 May  9 20:49 init.d
+-rw-r--r--    1 65534    65534          570 Jan 23 20:46 inittab
+-rw-r--r--    1 65534    65534         1748 Nov 15  2018 inputrc
+-rw-r--r--    1 65534    65534           53 May  9 20:49 issue
+drwxr-xr-x    2 65534    65534         4096 May  9 20:49 logrotate.d
+drwxr-xr-x    2 65534    65534         4096 May  9 20:49 modprobe.d
+-rw-r--r--    1 65534    65534           15 Jan 23 20:46 modules
+drwxr-xr-x    2 65534    65534         4096 May  9 20:49 modules-load.d
+-rw-r--r--    1 65534    65534          283 Jan 23 20:46 motd
+lrwxrwxrwx    1 65534    65534           12 May  9 20:49 mtab -> /proc/mounts
+drwxr-xr-x    8 65534    65534         4096 May  9 20:49 network
+drwxr-xr-x    2 65534    65534         4096 May  9 20:49 opt
+-rw-r--r--    1 65534    65534          162 May  9 20:49 os-release
+-rw-r-----    1 65534    65534         1289 Jun 12 13:57 passwd
+drwxr-xr-x    7 65534    65534         4096 May  9 20:49 periodic
+-rw-r--r--    1 65534    65534          259 Jan 23 20:46 profile
+drwxr-xr-x    2 65534    65534         4096 May  9 20:49 profile.d
+-rw-r--r--    1 65534    65534         1865 Jan 23 20:46 protocols
+-rw-r--r--    1 65534    65534           65 Jan 24 07:45 securetty
+-rw-r--r--    1 65534    65534        36141 Jan 23 20:46 services
+-rw-r-----    1 65534    65534          441 May  9 20:49 shadow
+-rw-r--r--    1 65534    65534           38 Jan 23 20:46 shells
+drwxr-xr-x    5 65534    65534         4096 May  9 20:49 ssl
+-rw-r--r--    1 65534    65534           53 Jan 23 20:46 sysctl.conf
+drwxr-xr-x    2 65534    65534         4096 May  9 20:49 sysctl.d
+drwxr-xr-x    9 65534    65534         4096 Jun 13 12:48 terminfo
+-rw-r--r--    1 65534    65534         4169 Jan 24 07:45 udhcpd.conf
+> ./
+error: Permission denied
+> cd challenge
+> ./README.flag
+error: Permission denied
+> ./ORME.flag
+error: Permission denied
+> ls -lt
+total 8
+----------    1 1338     1338            33 Jul 14 18:23 ORME.flag
+-r--------    1 1338     1338            28 Jul 14 18:23 README.flag
+> whoami
+whoami: unknown uid 1338
+> who
+error: No such file or directory
+> chown
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: chown [-RhLHPcvf]... USER[:[GRP]] FILE...
+
+Change the owner and/or group of each FILE to USER and/or GRP
+
+	-R	Recurse
+	-h	Affect symlinks instead of symlink targets
+	-L	Traverse all symlinks to directories
+	-H	Traverse symlinks on command line only
+	-P	Don't traverse symlinks (default)
+	-c	List changed files
+	-v	List all files
+	-f	Hide errors
+> echo ./README.flag
+./README.flag
+> chown {$whoami} README.flag 
+chown: unknown user {$whoami}
+> hostname
+jail-0
+> chown jail-0 README.flag
+chown: unknown user jail-0
+> su
+error: No such file or directory
+> whoami -h
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: whoami 
+
+Print the user name associated with the current effective user id
+> whoami
+whoami: unknown uid 1338
+> chown README.flag unknown
+chown: unknown user/group README:flag
+> ls
+ORME.flag
+README.flag
+> cat README.flag
+error: No such file or directory
+> ./README.flag
+error: Permission denied
+> chmod
+error: No such file or directory
+> chown unknown README.flag
+chown: unknown user unknown
+> chown 1338 README.flag
+> ./README.flag
+error: Permission denied
+> ionice
+none: prio 4
+> ionice -h
+ionice: unrecognized option: h
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: ionice [-c 1-3] [-n 0-7] [-p PID] [PROG]
+
+Change I/O priority and class
+
+	-c	Class. 1:realtime 2:best-effort 3:idle
+	-n	Priority
+> mknod -h
+mknod: unrecognized option: h
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: mknod [-m MODE] NAME TYPE [MAJOR MINOR]
+
+Create a special file (block, character, or pipe)
+
+	-m MODE	Creation mode (default a=rw)
+TYPE:
+	b	Block device
+	c or u	Character device
+	p	Named pipe (MAJOR MINOR must be omitted)
+
+> stty 
+stty: standard input: Not a tty
+> stat
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: stat [OPTIONS] FILE...
+
+Display file (default) or filesystem status
+
+	-c FMT	Use the specified format
+	-f	Display filesystem status
+	-L	Follow links
+	-t	Terse display
+
+FMT sequences for files:
+ %a	Access rights in octal
+ %A	Access rights in human readable form
+ %b	Number of blocks allocated (see %B)
+ %B	Size in bytes of each block reported by %b
+ %d	Device number in decimal
+ %D	Device number in hex
+ %f	Raw mode in hex
+ %F	File type
+ %g	Group ID
+ %G	Group name
+ %h	Number of hard links
+ %i	Inode number
+ %n	File name
+ %N	File name, with -> TARGET if symlink
+ %o	I/O block size
+ %s	Total size in bytes
+ %t	Major device type in hex
+ %T	Minor device type in hex
+ %u	User ID
+ %U	User name
+ %x	Time of last access
+ %X	Time of last access as seconds since Epoch
+ %y	Time of last modification
+ %Y	Time of last modification as seconds since Epoch
+ %z	Time of last change
+ %Z	Time of last change as seconds since Epoch
+
+FMT sequences for file systems:
+ %a	Free blocks available to non-superuser
+ %b	Total data blocks
+ %c	Total file nodes
+ %d	Free file nodes
+ %f	Free blocks
+ %i	File System ID in hex
+ %l	Maximum length of filenames
+ %n	File name
+ %s	Block size (for faster transfer)
+ %S	Fundamental block size (for block counts)
+ %t	Type in hex
+ %T	Type in human readable form
+> stat ../challenge/README.flag
+  File: ../challenge/README.flag
+  Size: 28        	Blocks: 8          IO Block: 4096   regular file
+Device: 37h/55d	Inode: 3           Links: 1
+Access: (0400/-r--------)  Uid: ( 1338/ UNKNOWN)   Gid: ( 1338/ UNKNOWN)
+Access: 2019-07-14 18:33:51.000000000
+Modify: 2019-07-14 18:33:51.000000000
+Change: 2019-07-14 18:33:51.000000000
+
+> mpstat
+Linux 4.15.0-1023-gcp (jail-0)	07/14/19	_x86_64_	(2 CPU)
+
+18:36:34     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest   %idle
+18:36:34     all    0.74    0.02    0.54    0.02    0.00    0.01    0.00    0.00   98.69
+> mpstat -h
+mpstat: unrecognized option: h
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: mpstat [-A] [-I SUM|CPU|ALL|SCPU] [-u] [-P num|ALL] [INTERVAL [COUNT]]
+
+Per-processor statistics
+
+	-A			Same as -I ALL -u -P ALL
+	-I SUM|CPU|ALL|SCPU	Report interrupt statistics
+	-P num|ALL		Processor to monitor
+	-u			Report CPU utilization
+> ping
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: ping [OPTIONS] HOST
+
+Send ICMP ECHO_REQUEST packets to network hosts
+
+	-4,-6		Force IP or IPv6 name resolution
+	-c CNT		Send only CNT pings
+	-s SIZE		Send SIZE data bytes in packets (default 56)
+	-A		Ping as soon as reply is recevied
+	-t TTL		Set TTL
+	-I IFACE/IP	Source interface or IP address
+	-W SEC		Seconds to wait for the first response (default 10)
+			(after all -c CNT packets are sent)
+	-w SEC		Seconds until ping exits (default:infinite)
+			(can exit earlier with -c CNT)
+	-q		Quiet, only display output at start
+			and when finished
+	-p HEXBYTE	Pattern to use for payload
+> pidof
+> pidof -h
+pidof: unrecognized option: h
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: pidof [OPTIONS] [NAME]...
+
+List PIDs of all processes with names that match NAMEs
+
+	-s	Show only one PID
+	-o PID	Omit given pid
+		Use %PPID to omit pid of pidof's parent
+> ps  
+PID   USER     TIME  COMMAND
+    1 1338      0:00 /bin/shell
+   19 1338      0:00 ps
+> ps
+PID   USER     TIME  COMMAND
+    1 1338      0:00 /bin/shell
+   20 1338      0:00 ps
+> ps -ef
+PID   USER     TIME  COMMAND
+    1 1338      0:00 /bin/shell
+   21 1338      0:00 ps -ef
+> setpriv 
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: setpriv [OPTIONS] PROG [ARGS]
+
+Run PROG with different privilege settings
+
+-d,--dump		Show current capabilities
+--nnp,--no-new-privs	Ignore setuid/setgid bits and file capabilities
+--inh-caps CAP,CAP	Set inheritable capabilities
+--ambient-caps CAP,CAP	Set ambient capabilities
+
+
+> setpriv
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: setpriv [OPTIONS] PROG [ARGS]
+
+Run PROG with different privilege settings
+
+-d,--dump		Show current capabilities
+--nnp,--no-new-privs	Ignore setuid/setgid bits and file capabilities
+--inh-caps CAP,CAP	Set inheritable capabilities
+--ambient-caps CAP,CAP	Set ambient capabilities
+> lzop -h
+lzop: unrecognized option: h
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: lzop [-cfUvd123456789CF] [FILE]...
+
+	-1..9	Compression level
+	-d	Decompress
+	-c	Write to stdout
+	-f	Force
+	-U	Delete input files
+	-v	Verbose
+	-F	Don't store or verify checksum
+	-C	Also write checksum of compressed block
+> lzop -v README.flag
+README.flag: 4294964596% - replaced with README.flag.lzo
+> ls
+ORME.flag
+README.flag
+README.flag.lzo
+> lzop -v -c README.flag.lzo
+?LZO
+
+??LZO   @??RNҡ
+
+ 0	@*??l?CTF{4ll_D474_5hh
+B3_Fr33}
+> lzop -v -c README.flag
+?LZO
+
+ 0	@???CTF{4ll_D474_5h4ll_B3_Fr33}
+
+
+
+GOTTEM: CTF{4ll_D474_5h4ll_B3_Fr33}

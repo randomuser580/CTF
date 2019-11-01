@@ -1,0 +1,18 @@
+sachin @ /Users/Sachin/Dropbox/CS/ctf/ctftime/sunshine $ fdisk -d WeWill.img 
+1,102399,0xEE,-,0,0,1,1023,254,63
+0,0,0x00,-,0,0,0,0,0,0
+0,0,0x00,-,0,0,0,0,0,0
+0,0,0x00,-,0,0,0,0,0,0
+sachin @ /Users/Sachin/Dropbox/CS/ctf/ctftime/sunshine $ gparted WeWill.img 
+-bash: gparted: command not found
+sachin @ /Users/Sachin/Dropbox/CS/ctf/ctftime/sunshine $ fdisk WeWill.img 
+Disk: WeWill.img				       geometry: 406/4/63 [102400 sectors]
+Signature: 0xAA55
+         Starting       Ending
+ #: id  cyl  hd sec -  cyl  hd sec [     start -       size]
+------------------------------------------------------------------------
+ 1: EE    0   0   1 - 1023 254  63 [         1 -     102399] <Unknown ID>
+ 2: 00    0   0   0 -    0   0   0 [         0 -          0] unused      
+ 3: 00    0   0   0 -    0   0   0 [         0 -          0] unused      
+ 4: 00    0   0   0 -    0   0   0 [         0 -          0] unused      
+sachin @ /Users/Sachin/Dropbox/CS/ctf/ctftime/sunshine $ sudo mount -o loop,offset=$[sector size * 102399] ./WeWill.img .

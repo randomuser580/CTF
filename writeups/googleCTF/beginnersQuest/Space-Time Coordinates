@@ -1,0 +1,47 @@
+
+Challenge
+Enter Space-Time Coordinates
+Category: misc
+
+Ok well done. The console is on. It's asking for coordinates.
+Beating heavily on the console yields little results, 
+but the only time anything changes on your display is when you put in numbers..
+So what numbers are you going to go for?  
+You see the starship's logs, but is there a manual? 
+Or should you just keep beating the console?
+
+
+Solution 
+
+After unzipping the challenge there are 2 files inside:
+
+-rw-r--r-- 1 vuggo vuggo     247 Dec 31  1979 log.txt
+-rwxr-xr-x 1 vuggo vuggo    8800 Dec 31  1979 rand2
+
+cat log.txt outputs some coordinates:
+
+0: AC+79 3888{6652492084280_198129318435598}
+1: Pliamas Sos{276116074108949_243544040631356}
+2: Ophiuchus{11230026071572_273089684340955}
+3: Pax Memor -ne4456 Hi Pro{21455190336714_219250247519817}
+4: Camion Gyrin{235962764372832_269519420054142}
+
+Next:  
+Run file on rand2 to see its an ELF and when you execute it, it outputs
+
+"Travel coordinator
+0: AC+79 3888 - 170996645254729, 259634593052394
+1: Pliamas Sos - 49739446453899, 266003050338544
+2: Ophiuchus - 4741117906980, 147964493571786
+3: Pax Memor -ne4456 Hi Pro - 2161525711268, 6193114635506
+4: Camion Gyrin - 231452598712765, 228218252690243
+5: CTF - <REDACTED>"
+
+First thing I did was run this through a reverse engineering too
+but then I realized its the 1st challenge beginner quest so
+
+strings rand2
+
+and you see 
+
+"Arrived at the flag. Congrats, your flag is: CTF{welcome_to_googlectf}"

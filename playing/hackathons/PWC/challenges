@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>PwCTF USA</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/themes/core/static/img/favicon.ico" type="image/x-icon">
+                <link rel="icon" href="/themes/core/static/img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/themes/core/static/css/vendor/bootstrap.min.css">
+		<link rel="stylesheet" href="/themes/core/static/css/vendor/font-awesome/fontawesome-fonts.css" type='text/css'>
+		<link rel="stylesheet" href="/themes/core/static/css/vendor/font-awesome/fontawesome-all.css" type='text/css'>
+		<link href='/themes/core/static/css/vendor/font.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/themes/core/static/css/jumbotron.css">
+		<link rel="stylesheet" href="/themes/core/static/css/sticky-footer.css">
+		<link rel="stylesheet" href="/themes/core/static/css/base.css">
+		<link rel="stylesheet" type="text/css" href="/static/user.css">
+		
+
+		
+		<script src="/themes/core/static/js/vendor/moment.min.js"></script>
+		<script src="/themes/core/static/js/vendor/nunjucks.min.js"></script>
+		<script type="text/javascript">
+				var script_root = "";
+				var csrf_nonce = "2496588a98f2cc1356887d5120aa07c48b6bcdc6ae6270d81264e51641ab224b1c4445fa60b10bf4866cc1d18a6d29671617c1cc0615a7281a09d58e01812474"
+		</script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-pwc">
+		<div class="container">
+			<div class="logo-div">
+			<a href="/" class="navbar-brand">PwC</a> <i class="pipeline">|</i> 
+
+			<a class="territory-name" href="/">PwCTF USA</a>
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#base-navbars"
+					aria-controls="base-navbars" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="base-navbars">
+				<ul class="navbar-nav mr-auto">
+					
+
+					
+				</ul>
+
+				<hr class="d-sm-flex d-md-flex d-lg-none">
+
+				<ul class="navbar-nav ml-md-auto d-block d-sm-flex d-md-flex">
+					
+						
+							<li class="nav-item">
+								<a class="nav-link" href="/register">Register</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link d-none d-md-block d-lg-block">|</a>
+							</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="/login">Login</a>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="training-background">
+	</div>
+
+
+	<main role="main">
+		
+<div class="jumbotron">
+	<div class="container">
+		<h1>Login</h1>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			
+			<form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal">
+				<div class="form-group">
+					<label for="name-input">
+						Team / Player Name or Email
+					</label>
+					<input class="form-control" type="text" name="name" id="name-input" />
+				</div>
+				<div class="form-group">
+					<label for="password-input">
+						Password
+					</label>
+					<input class="form-control" type="password" name="password" id="password-input" />
+				</div>
+				<div class="row pt-3">
+					<div class="col-md-6">
+						<a class="float-left align-text-to-button" href="/reset_password">
+							Forgot your password?
+						</a>
+					</div>
+					<div class="col-md-6">
+						<button type="submit" id="submit" tabindex="5" class="btn btn-md btn-primary btn-outlined float-right">
+							Submit
+						</button>
+					</div>
+				</div>
+				<input type="hidden" name="nonce" value="2496588a98f2cc1356887d5120aa07c48b6bcdc6ae6270d81264e51641ab224b1c4445fa60b10bf4866cc1d18a6d29671617c1cc0615a7281a09d58e01812474">
+			</form>
+		</div>
+	</div>
+</div>
+
+	</main>
+
+
+	<footer class="footer">
+		<div class="container text-center">
+			<a href="https://pwctf.com/about">
+				<small class="text-muted">Powered by PwC Israel Cybersecurity Centre of Excellence</small>
+			</a>
+		</div>
+	</footer>
+
+	<script src="/themes/core/static/js/vendor/jquery.min.js"></script>
+	<script src="/themes/core/static/js/vendor/markdown-it.min.js"></script>
+	<script src="/themes/core/static/js/vendor/bootstrap.bundle.min.js"></script>
+	<script src="/themes/core/static/js/style.js"></script>
+	<script src="/themes/core/static/js/ezq.js"></script>
+	
+
+
+	
+</body>
+</html>

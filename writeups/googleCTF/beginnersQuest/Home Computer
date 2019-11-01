@@ -1,0 +1,75 @@
+Challenge: Home Computer
+Category: Forensics
+Description:
+
+Blunderbussing your way through the decision making process, you figure that one is as good as the other and that further research into the importance of Work Life balance is of little interest to you. 
+You're the decider after all. You confidently use the credentials to access the "Home Computer."
+Something called "desktop" presents itself, displaying a fascinating round and bumpy creature (much like yourself) labeled "cauliflower 4 work - GAN post." 
+Your 40 hearts skip a beat. It looks somewhat like your neighbors on XiXaX3. ..Ah XiXaX3... You'd spend summers there at the beach, an awkward kid from ObarPool on a family vacation, yearning, but without nerve, to talk to those cool sophisticated locals. 
+So are these "Cauliflowers" earthlings? Not at all the unrelatable bipeds you imagined them to be. 
+Will they be at the party? Hopefully SarahH has left some other work data on her home computer for you to learn more.
+
+
+Solution:
+
+We get these two files from the zip - one of which is a note and the other a filesystem. Time to mount it?
+
+family.ntfs: DOS/MBR boot sector, code offset 0x52+2, OEM-ID "NTFS    ", sectors/cluster 8, Media descriptor 0xf8, sectors/track 0, dos < 4.0 BootSector (0x80), FAT (1Y bit by descriptor); NTFS, sectors 51199, $MFT start cluster 4, $MFTMirror start cluster 3199, bytes/RecordSegment 2^(-1*246), clusters/index block 1, serial number 072643f694104cb6f
+note.txt:    ASCII text
+
+Ill check the note anyways. 
+
+root @ /root/CTF/google2019/HomeComputer $ cat note.txt 
+If you're on MacOS, you can rename .ntfs to .dmg
+
+Yep - if its a .dmg thats for installation which gets mounted in macOS so we need to mount this.
+
+I mount it and check the contents and we get
+
+root @ /root/CTF/google2019/HomeComputer $ mkdir /mnt/ctfMount
+root @ /root/CTF/google2019/HomeComputer $ mount family.ntfs /mnt/ctfMount/
+root @ /root/CTF/google2019/HomeComputer $ ls /mnt/ctfMount/
+total 24
+drwxrwxrwx 1 root root 16384 Jun 13 00:38  Windows
+-rwxrwxrwx 1 root root     0 Jun 13 00:37  swapfile.sys
+-rwxrwxrwx 1 root root     0 Jun 13 00:37  SSUUpdater.log
+-rwxrwxrwx 1 root root     0 Jun 13 00:37  Setup.log
+drwxrwxrwx 1 root root  4096 Jun 13 00:37 'Program Files (x86)'
+drwxrwxrwx 1 root root  4096 Jun 13 00:37 'Program Files'
+-rwxrwxrwx 1 root root     0 Jun 13 00:37  pagefile.sys
+-rwxrwxrwx 1 root root     0 Jun 13 00:37  BOOTNXT
+-rwxrwxrwx 1 root root     0 Jun 13 00:37  bootmgr
+drwxrwxrwx 1 root root     0 Jun 13 00:37  Users
+
+
+There are A LOT of files which are 0 bytes so I dug around A LOT and eventually came upon
+some files in Documents. Heres one of them
+
+root @ /mnt/ctfMount/Users/Family $ cat Documents/credentials.txt 
+I keep pictures of my credentials in extended attributes.
+
+After watching some videos and reading articles on extended attributes, it seems that the credentials file is sortof symlinked to another file.
+
+There are multiple commands which can help us here but fls seemed to be the best to find information from the filesystem.
+icat was another tool that I read about which helped me out here.
+
+running fls while recursing into the directories gives us these inode numbers which we can use to get information from.
+
+root @ /root/CTF/google2019/HomeComputer $ fls -r family.ntfs | grep "credentials.txt"
++++ r/r 13288-128-2:	credentials.txt
++++ r/r 13288-128-4:	credentials.txt:FILE0
+
+Next I used icat to try and see what the credentials.txt:FILE0 was, and it seemed to be a large amount of data,
+so I piped the stdout into the file command to see what the file actually was. 
+
+root @ /root/CTF/google2019/HomeComputer $ icat family.ntfs 13288-128-4 | file -
+/dev/stdin: PNG image data, 1234 x 339, 8-bit/color RGB, non-interlaced
+
+GREAT! Its actually a picture like credentials.txt said it would be!!!!
+
+Now we need to find a way to open it so I redirected it into a file.png now 
+AND WE GET A PICTURE WITH THE WORDS
+
+"CTF{congratsyoufoundmycreds}"
+
+

