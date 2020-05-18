@@ -1,0 +1,6 @@
+http://10.10.10.168:8080/';ls
+
+this gives us an error for sure
+
+http://10.10.10.168:8080/';print(1);'" : this gives us the output 1 in our console
+need to figure out how to escalate this to a request..?

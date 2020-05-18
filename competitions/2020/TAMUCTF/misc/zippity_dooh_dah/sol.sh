@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for f in "$folder"./unzipped2/*
+do
+    cat "$f"; echo;
+done

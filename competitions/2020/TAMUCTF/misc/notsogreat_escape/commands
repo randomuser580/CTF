@@ -1,0 +1,6 @@
+connect: stty raw -echo; fg; reset
+/ # uname -a
+Linux ea9fec7cd45f 4.14.171-105.231.amzn1.x86_64 #1 SMP Thu Feb 27 23:49:15 UTC 2020 x86_64 Linux
+/ # cat /etc/issue
+Welcome to Alpine Linux 3.11
+Kernel \r on an \m (\l)

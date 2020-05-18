@@ -1,0 +1,3 @@
+wfuzz -Z -c  -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.168:8080/FUZZ/SuperSecureServer.py --sc 200
+
+gives us /develop

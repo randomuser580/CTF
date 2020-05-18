@@ -1,0 +1,10 @@
+root:<empty>
+admin:<empty>
+administrator:<empty>
+webadmin:<empty>
+sysadmin:<empty>
+netadmin:<empty>
+guest:<empty>
+user:<empty>
+web:<empty>
+test:<empty>

@@ -1,0 +1,3 @@
+# Nmap 7.80 scan initiated Sat Mar 14 18:36:14 2020 as: nmap -sC -sV -oN leettube.2020.chall.actf.co
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Sat Mar 14 18:36:14 2020 -- 0 IP addresses (0 hosts up) scanned in 0.22 seconds

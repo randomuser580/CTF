@@ -1,0 +1,2 @@
+gotten with the ruby exploit and "type C:\Users\dimitris\Desktop\user.txt"
+ba22fde1932d06eb76a163d312f921a2

@@ -1,0 +1,25 @@
+# Nmap 7.80 scan initiated Sat Mar 14 06:08:59 2020 as: nmap -sV -sC -oN crypt crypt.2020.chall.actf.co
+Nmap scan report for crypt.2020.chall.actf.co (52.207.14.64)
+Host is up (0.0065s latency).
+rDNS record for 52.207.14.64: ec2-52-207-14-64.compute-1.amazonaws.com
+Not shown: 997 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 bb:23:9d:9c:02:d8:f5:17:b7:e4:66:67:49:f3:3d:dd (RSA)
+|   256 84:ed:51:88:40:a6:b3:10:d6:9e:20:74:05:48:21:4b (ECDSA)
+|_  256 93:02:d8:c8:d0:2e:8e:54:75:ae:81:75:62:9c:86:bb (ED25519)
+80/tcp  open  http     Caddy httpd
+|_http-server-header: Caddy
+|_http-title: Did not follow redirect to https://crypt.2020.chall.actf.co/
+443/tcp open  ssl/http Caddy httpd
+|_http-server-header: Caddy
+|_http-title: Defund's Crypt
+| ssl-cert: Subject: commonName=*.2020.chall.actf.co
+| Subject Alternative Name: DNS:*.2020.chall.actf.co
+| Not valid before: 2020-03-13T22:26:21
+|_Not valid after:  2020-06-11T22:26:21
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Mar 14 06:09:24 2020 -- 1 IP address (1 host up) scanned in 25.86 seconds

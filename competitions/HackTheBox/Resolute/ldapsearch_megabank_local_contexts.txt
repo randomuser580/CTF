@@ -1,0 +1,1081 @@
+# extended LDIF
+#
+# LDAPv3
+# base <DC=megabank,DC=local> with scope subtree
+# filter: (objectclass=*)
+# requesting: namingcontexts 
+#
+
+# megabank.local
+dn: DC=megabank,DC=local
+
+# Users, megabank.local
+dn: CN=Users,DC=megabank,DC=local
+
+# Computers, megabank.local
+dn: CN=Computers,DC=megabank,DC=local
+
+# Domain Controllers, megabank.local
+dn: OU=Domain Controllers,DC=megabank,DC=local
+
+# System, megabank.local
+dn: CN=System,DC=megabank,DC=local
+
+# LostAndFound, megabank.local
+dn: CN=LostAndFound,DC=megabank,DC=local
+
+# Infrastructure, megabank.local
+dn: CN=Infrastructure,DC=megabank,DC=local
+
+# ForeignSecurityPrincipals, megabank.local
+dn: CN=ForeignSecurityPrincipals,DC=megabank,DC=local
+
+# Program Data, megabank.local
+dn: CN=Program Data,DC=megabank,DC=local
+
+# Microsoft, Program Data, megabank.local
+dn: CN=Microsoft,CN=Program Data,DC=megabank,DC=local
+
+# NTDS Quotas, megabank.local
+dn: CN=NTDS Quotas,DC=megabank,DC=local
+
+# Managed Service Accounts, megabank.local
+dn: CN=Managed Service Accounts,DC=megabank,DC=local
+
+# Keys, megabank.local
+dn: CN=Keys,DC=megabank,DC=local
+
+# WinsockServices, System, megabank.local
+dn: CN=WinsockServices,CN=System,DC=megabank,DC=local
+
+# RpcServices, System, megabank.local
+dn: CN=RpcServices,CN=System,DC=megabank,DC=local
+
+# FileLinks, System, megabank.local
+dn: CN=FileLinks,CN=System,DC=megabank,DC=local
+
+# VolumeTable, FileLinks, System, megabank.local
+dn: CN=VolumeTable,CN=FileLinks,CN=System,DC=megabank,DC=local
+
+# ObjectMoveTable, FileLinks, System, megabank.local
+dn: CN=ObjectMoveTable,CN=FileLinks,CN=System,DC=megabank,DC=local
+
+# Default Domain Policy, System, megabank.local
+dn: CN=Default Domain Policy,CN=System,DC=megabank,DC=local
+
+# AppCategories, Default Domain Policy, System, megabank.local
+dn: CN=AppCategories,CN=Default Domain Policy,CN=System,DC=megabank,DC=local
+
+# Meetings, System, megabank.local
+dn: CN=Meetings,CN=System,DC=megabank,DC=local
+
+# Policies, System, megabank.local
+dn: CN=Policies,CN=System,DC=megabank,DC=local
+
+# {31B2F340-016D-11D2-945F-00C04FB984F9}, Policies, System, megabank.local
+dn: CN={31B2F340-016D-11D2-945F-00C04FB984F9},CN=Policies,CN=System,DC=megaban
+ k,DC=local
+
+# {6AC1786C-016F-11D2-945F-00C04fB984F9}, Policies, System, megabank.local
+dn: CN={6AC1786C-016F-11D2-945F-00C04fB984F9},CN=Policies,CN=System,DC=megaban
+ k,DC=local
+
+# RAS and IAS Servers Access Check, System, megabank.local
+dn: CN=RAS and IAS Servers Access Check,CN=System,DC=megabank,DC=local
+
+# File Replication Service, System, megabank.local
+dn: CN=File Replication Service,CN=System,DC=megabank,DC=local
+
+# Dfs-Configuration, System, megabank.local
+dn: CN=Dfs-Configuration,CN=System,DC=megabank,DC=local
+
+# IP Security, System, megabank.local
+dn: CN=IP Security,CN=System,DC=megabank,DC=local
+
+# ipsecPolicy{72385230-70FA-11D1-864C-14A300000000}, IP Security, System, megab
+ ank.local
+dn: CN=ipsecPolicy{72385230-70FA-11D1-864C-14A300000000},CN=IP Security,CN=Sys
+ tem,DC=megabank,DC=local
+
+# ipsecISAKMPPolicy{72385231-70FA-11D1-864C-14A300000000}, IP Security, System,
+  megabank.local
+dn: CN=ipsecISAKMPPolicy{72385231-70FA-11D1-864C-14A300000000},CN=IP Security,
+ CN=System,DC=megabank,DC=local
+
+# ipsecNFA{72385232-70FA-11D1-864C-14A300000000}, IP Security, System, megabank
+ .local
+dn: CN=ipsecNFA{72385232-70FA-11D1-864C-14A300000000},CN=IP Security,CN=System
+ ,DC=megabank,DC=local
+
+# ipsecNFA{59319BE2-5EE3-11D2-ACE8-0060B0ECCA17}, IP Security, System, megabank
+ .local
+dn: CN=ipsecNFA{59319BE2-5EE3-11D2-ACE8-0060B0ECCA17},CN=IP Security,CN=System
+ ,DC=megabank,DC=local
+
+# ipsecNFA{594272E2-071D-11D3-AD22-0060B0ECCA17}, IP Security, System, megabank
+ .local
+dn: CN=ipsecNFA{594272E2-071D-11D3-AD22-0060B0ECCA17},CN=IP Security,CN=System
+ ,DC=megabank,DC=local
+
+# ipsecNegotiationPolicy{72385233-70FA-11D1-864C-14A300000000}, IP Security, Sy
+ stem, megabank.local
+dn: CN=ipsecNegotiationPolicy{72385233-70FA-11D1-864C-14A300000000},CN=IP Secu
+ rity,CN=System,DC=megabank,DC=local
+
+# ipsecFilter{7238523A-70FA-11D1-864C-14A300000000}, IP Security, System, megab
+ ank.local
+dn: CN=ipsecFilter{7238523A-70FA-11D1-864C-14A300000000},CN=IP Security,CN=Sys
+ tem,DC=megabank,DC=local
+
+# ipsecNegotiationPolicy{59319BDF-5EE3-11D2-ACE8-0060B0ECCA17}, IP Security, Sy
+ stem, megabank.local
+dn: CN=ipsecNegotiationPolicy{59319BDF-5EE3-11D2-ACE8-0060B0ECCA17},CN=IP Secu
+ rity,CN=System,DC=megabank,DC=local
+
+# ipsecNegotiationPolicy{7238523B-70FA-11D1-864C-14A300000000}, IP Security, Sy
+ stem, megabank.local
+dn: CN=ipsecNegotiationPolicy{7238523B-70FA-11D1-864C-14A300000000},CN=IP Secu
+ rity,CN=System,DC=megabank,DC=local
+
+# ipsecFilter{72385235-70FA-11D1-864C-14A300000000}, IP Security, System, megab
+ ank.local
+dn: CN=ipsecFilter{72385235-70FA-11D1-864C-14A300000000},CN=IP Security,CN=Sys
+ tem,DC=megabank,DC=local
+
+# ipsecPolicy{72385236-70FA-11D1-864C-14A300000000}, IP Security, System, megab
+ ank.local
+dn: CN=ipsecPolicy{72385236-70FA-11D1-864C-14A300000000},CN=IP Security,CN=Sys
+ tem,DC=megabank,DC=local
+
+# ipsecISAKMPPolicy{72385237-70FA-11D1-864C-14A300000000}, IP Security, System,
+  megabank.local
+dn: CN=ipsecISAKMPPolicy{72385237-70FA-11D1-864C-14A300000000},CN=IP Security,
+ CN=System,DC=megabank,DC=local
+
+# ipsecNFA{59319C04-5EE3-11D2-ACE8-0060B0ECCA17}, IP Security, System, megabank
+ .local
+dn: CN=ipsecNFA{59319C04-5EE3-11D2-ACE8-0060B0ECCA17},CN=IP Security,CN=System
+ ,DC=megabank,DC=local
+
+# ipsecNegotiationPolicy{59319C01-5EE3-11D2-ACE8-0060B0ECCA17}, IP Security, Sy
+ stem, megabank.local
+dn: CN=ipsecNegotiationPolicy{59319C01-5EE3-11D2-ACE8-0060B0ECCA17},CN=IP Secu
+ rity,CN=System,DC=megabank,DC=local
+
+# ipsecPolicy{7238523C-70FA-11D1-864C-14A300000000}, IP Security, System, megab
+ ank.local
+dn: CN=ipsecPolicy{7238523C-70FA-11D1-864C-14A300000000},CN=IP Security,CN=Sys
+ tem,DC=megabank,DC=local
+
+# ipsecISAKMPPolicy{7238523D-70FA-11D1-864C-14A300000000}, IP Security, System,
+  megabank.local
+dn: CN=ipsecISAKMPPolicy{7238523D-70FA-11D1-864C-14A300000000},CN=IP Security,
+ CN=System,DC=megabank,DC=local
+
+# ipsecNFA{7238523E-70FA-11D1-864C-14A300000000}, IP Security, System, megabank
+ .local
+dn: CN=ipsecNFA{7238523E-70FA-11D1-864C-14A300000000},CN=IP Security,CN=System
+ ,DC=megabank,DC=local
+
+# ipsecNFA{59319BF3-5EE3-11D2-ACE8-0060B0ECCA17}, IP Security, System, megabank
+ .local
+dn: CN=ipsecNFA{59319BF3-5EE3-11D2-ACE8-0060B0ECCA17},CN=IP Security,CN=System
+ ,DC=megabank,DC=local
+
+# ipsecNFA{594272FD-071D-11D3-AD22-0060B0ECCA17}, IP Security, System, megabank
+ .local
+dn: CN=ipsecNFA{594272FD-071D-11D3-AD22-0060B0ECCA17},CN=IP Security,CN=System
+ ,DC=megabank,DC=local
+
+# ipsecNegotiationPolicy{7238523F-70FA-11D1-864C-14A300000000}, IP Security, Sy
+ stem, megabank.local
+dn: CN=ipsecNegotiationPolicy{7238523F-70FA-11D1-864C-14A300000000},CN=IP Secu
+ rity,CN=System,DC=megabank,DC=local
+
+# ipsecNegotiationPolicy{59319BF0-5EE3-11D2-ACE8-0060B0ECCA17}, IP Security, Sy
+ stem, megabank.local
+dn: CN=ipsecNegotiationPolicy{59319BF0-5EE3-11D2-ACE8-0060B0ECCA17},CN=IP Secu
+ rity,CN=System,DC=megabank,DC=local
+
+# ipsecNFA{6A1F5C6F-72B7-11D2-ACF0-0060B0ECCA17}, IP Security, System, megabank
+ .local
+dn: CN=ipsecNFA{6A1F5C6F-72B7-11D2-ACF0-0060B0ECCA17},CN=IP Security,CN=System
+ ,DC=megabank,DC=local
+
+# AdminSDHolder, System, megabank.local
+dn: CN=AdminSDHolder,CN=System,DC=megabank,DC=local
+
+# ComPartitions, System, megabank.local
+dn: CN=ComPartitions,CN=System,DC=megabank,DC=local
+
+# ComPartitionSets, System, megabank.local
+dn: CN=ComPartitionSets,CN=System,DC=megabank,DC=local
+
+# WMIPolicy, System, megabank.local
+dn: CN=WMIPolicy,CN=System,DC=megabank,DC=local
+
+# DomainUpdates, System, megabank.local
+dn: CN=DomainUpdates,CN=System,DC=megabank,DC=local
+
+# Operations, DomainUpdates, System, megabank.local
+dn: CN=Operations,CN=DomainUpdates,CN=System,DC=megabank,DC=local
+
+# ab402345-d3c3-455d-9ff7-40268a1099b6, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=ab402345-d3c3-455d-9ff7-40268a1099b6,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# bab5f54d-06c8-48de-9b87-d78b796564e4, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=bab5f54d-06c8-48de-9b87-d78b796564e4,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# f3dd09dd-25e8-4f9c-85df-12d6d2f2f2f5, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=f3dd09dd-25e8-4f9c-85df-12d6d2f2f2f5,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 2416c60a-fe15-4d7a-a61e-dffd5df864d3, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=2416c60a-fe15-4d7a-a61e-dffd5df864d3,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 7868d4c8-ac41-4e05-b401-776280e8e9f1, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=7868d4c8-ac41-4e05-b401-776280e8e9f1,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 860c36ed-5241-4c62-a18b-cf6ff9994173, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=860c36ed-5241-4c62-a18b-cf6ff9994173,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 0e660ea3-8a5e-4495-9ad7-ca1bd4638f9e, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=0e660ea3-8a5e-4495-9ad7-ca1bd4638f9e,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# a86fe12a-0f62-4e2a-b271-d27f601f8182, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=a86fe12a-0f62-4e2a-b271-d27f601f8182,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# d85c0bfd-094f-4cad-a2b5-82ac9268475d, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=d85c0bfd-094f-4cad-a2b5-82ac9268475d,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6ada9ff7-c9df-45c1-908e-9fef2fab008a, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6ada9ff7-c9df-45c1-908e-9fef2fab008a,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 10b3ad2a-6883-4fa7-90fc-6377cbdc1b26, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=10b3ad2a-6883-4fa7-90fc-6377cbdc1b26,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 98de1d3e-6611-443b-8b4e-f4337f1ded0b, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=98de1d3e-6611-443b-8b4e-f4337f1ded0b,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# f607fd87-80cf-45e2-890b-6cf97ec0e284, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=f607fd87-80cf-45e2-890b-6cf97ec0e284,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 9cac1f66-2167-47ad-a472-2a13251310e4, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=9cac1f66-2167-47ad-a472-2a13251310e4,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6ff880d6-11e7-4ed1-a20f-aac45da48650, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6ff880d6-11e7-4ed1-a20f-aac45da48650,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 446f24ea-cfd5-4c52-8346-96e170bcb912, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=446f24ea-cfd5-4c52-8346-96e170bcb912,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 51cba88b-99cf-4e16-bef2-c427b38d0767, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=51cba88b-99cf-4e16-bef2-c427b38d0767,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# a3dac986-80e7-4e59-a059-54cb1ab43cb9, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=a3dac986-80e7-4e59-a059-54cb1ab43cb9,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 293f0798-ea5c-4455-9f5d-45f33a30703b, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=293f0798-ea5c-4455-9f5d-45f33a30703b,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 5c82b233-75fc-41b3-ac71-c69592e6bf15, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=5c82b233-75fc-41b3-ac71-c69592e6bf15,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 7ffef925-405b-440a-8d58-35e8cd6e98c3, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=7ffef925-405b-440a-8d58-35e8cd6e98c3,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 4dfbb973-8a62-4310-a90c-776e00f83222, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=4dfbb973-8a62-4310-a90c-776e00f83222,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 8437C3D8-7689-4200-BF38-79E4AC33DFA0, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=8437C3D8-7689-4200-BF38-79E4AC33DFA0,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 7cfb016c-4f87-4406-8166-bd9df943947f, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=7cfb016c-4f87-4406-8166-bd9df943947f,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# f7ed4553-d82b-49ef-a839-2f38a36bb069, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=f7ed4553-d82b-49ef-a839-2f38a36bb069,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 8ca38317-13a4-4bd4-806f-ebed6acb5d0c, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=8ca38317-13a4-4bd4-806f-ebed6acb5d0c,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 3c784009-1f57-4e2a-9b04-6915c9e71961, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=3c784009-1f57-4e2a-9b04-6915c9e71961,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5678-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5678-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5679-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5679-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd567a-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd567a-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd567b-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd567b-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd567c-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd567c-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd567d-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd567d-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd567e-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd567e-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd567f-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd567f-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5680-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5680-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5681-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5681-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5682-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5682-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5683-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5683-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5684-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5684-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5685-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5685-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5686-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5686-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5687-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5687-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5688-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5688-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd5689-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd5689-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd568a-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd568a-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd568b-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd568b-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd568c-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd568c-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 6bcd568d-8314-11d6-977b-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6bcd568d-8314-11d6-977b-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 3051c66f-b332-4a73-9a20-2d6a7d6e6a1c, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=3051c66f-b332-4a73-9a20-2d6a7d6e6a1c,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 3e4f4182-ac5d-4378-b760-0eab2de593e2, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=3e4f4182-ac5d-4378-b760-0eab2de593e2,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# c4f17608-e611-11d6-9793-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=c4f17608-e611-11d6-9793-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 13d15cf0-e6c8-11d6-9793-00c04f613221, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=13d15cf0-e6c8-11d6-9793-00c04f613221,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 8ddf6913-1c7b-4c59-a5af-b9ca3b3d2c4c, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=8ddf6913-1c7b-4c59-a5af-b9ca3b3d2c4c,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# dda1d01d-4bd7-4c49-a184-46f9241b560e, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=dda1d01d-4bd7-4c49-a184-46f9241b560e,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# a1789bfb-e0a2-4739-8cc0-e77d892d080a, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=a1789bfb-e0a2-4739-8cc0-e77d892d080a,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 61b34cb0-55ee-4be9-b595-97810b92b017, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=61b34cb0-55ee-4be9-b595-97810b92b017,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 57428d75-bef7-43e1-938b-2e749f5a8d56, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=57428d75-bef7-43e1-938b-2e749f5a8d56,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# ebad865a-d649-416f-9922-456b53bbb5b8, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=ebad865a-d649-416f-9922-456b53bbb5b8,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 0b7fb422-3609-4587-8c2e-94b10f67d1bf, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=0b7fb422-3609-4587-8c2e-94b10f67d1bf,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 2951353e-d102-4ea5-906c-54247eeec741, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=2951353e-d102-4ea5-906c-54247eeec741,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 71482d49-8870-4cb3-a438-b6fc9ec35d70, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=71482d49-8870-4cb3-a438-b6fc9ec35d70,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# aed72870-bf16-4788-8ac7-22299c8207f1, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=aed72870-bf16-4788-8ac7-22299c8207f1,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# f58300d1-b71a-4DB6-88a1-a8b9538beaca, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=f58300d1-b71a-4DB6-88a1-a8b9538beaca,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 231fb90b-c92a-40c9-9379-bacfc313a3e3, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=231fb90b-c92a-40c9-9379-bacfc313a3e3,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 4aaabc3a-c416-4b9c-a6bb-4b453ab1c1f0, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=4aaabc3a-c416-4b9c-a6bb-4b453ab1c1f0,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 9738c400-7795-4d6e-b19d-c16cd6486166, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=9738c400-7795-4d6e-b19d-c16cd6486166,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# de10d491-909f-4fb0-9abb-4b7865c0fe80, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=de10d491-909f-4fb0-9abb-4b7865c0fe80,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# b96ed344-545a-4172-aa0c-68118202f125, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=b96ed344-545a-4172-aa0c-68118202f125,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 4c93ad42-178a-4275-8600-16811d28f3aa, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=4c93ad42-178a-4275-8600-16811d28f3aa,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# c88227bc-fcca-4b58-8d8a-cd3d64528a02, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=c88227bc-fcca-4b58-8d8a-cd3d64528a02,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 5e1574f6-55df-493e-a671-aaeffca6a100, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=5e1574f6-55df-493e-a671-aaeffca6a100,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# d262aae8-41f7-48ed-9f35-56bbb677573d, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=d262aae8-41f7-48ed-9f35-56bbb677573d,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 82112ba0-7e4c-4a44-89d9-d46c9612bf91, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=82112ba0-7e4c-4a44-89d9-d46c9612bf91,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# c3c927a6-cc1d-47c0-966b-be8f9b63d991, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=c3c927a6-cc1d-47c0-966b-be8f9b63d991,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 54afcfb9-637a-4251-9f47-4d50e7021211, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=54afcfb9-637a-4251-9f47-4d50e7021211,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# f4728883-84dd-483c-9897-274f2ebcf11e, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=f4728883-84dd-483c-9897-274f2ebcf11e,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# ff4f9d27-7157-4cb0-80a9-5d6f2b14c8ff, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=ff4f9d27-7157-4cb0-80a9-5d6f2b14c8ff,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 83C53DA7-427E-47A4-A07A-A324598B88F7, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=83C53DA7-427E-47A4-A07A-A324598B88F7,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# C81FC9CC-0130-4FD1-B272-634D74818133, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=C81FC9CC-0130-4FD1-B272-634D74818133,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# E5F9E791-D96D-4FC9-93C9-D53E1DC439BA, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=E5F9E791-D96D-4FC9-93C9-D53E1DC439BA,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# e6d5fd00-385d-4e65-b02d-9da3493ed850, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=e6d5fd00-385d-4e65-b02d-9da3493ed850,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 3a6b3fbf-3168-4312-a10d-dd5b3393952d, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=3a6b3fbf-3168-4312-a10d-dd5b3393952d,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 7F950403-0AB3-47F9-9730-5D7B0269F9BD, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=7F950403-0AB3-47F9-9730-5D7B0269F9BD,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# 434bb40d-dbc9-4fe7-81d4-d57229f7b080, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=434bb40d-dbc9-4fe7-81d4-d57229f7b080,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# Windows2003Update, DomainUpdates, System, megabank.local
+dn: CN=Windows2003Update,CN=DomainUpdates,CN=System,DC=megabank,DC=local
+
+# ActiveDirectoryUpdate, DomainUpdates, System, megabank.local
+dn: CN=ActiveDirectoryUpdate,CN=DomainUpdates,CN=System,DC=megabank,DC=local
+
+# Password Settings Container, System, megabank.local
+dn: CN=Password Settings Container,CN=System,DC=megabank,DC=local
+
+# PSPs, System, megabank.local
+dn: CN=PSPs,CN=System,DC=megabank,DC=local
+
+# TPM Devices, megabank.local
+dn: CN=TPM Devices,DC=megabank,DC=local
+
+# Administrator, Users, megabank.local
+dn: CN=Administrator,CN=Users,DC=megabank,DC=local
+
+# Guest, Users, megabank.local
+dn: CN=Guest,CN=Users,DC=megabank,DC=local
+
+# DefaultAccount, Users, megabank.local
+dn: CN=DefaultAccount,CN=Users,DC=megabank,DC=local
+
+# Builtin, megabank.local
+dn: CN=Builtin,DC=megabank,DC=local
+
+# Administrators, Builtin, megabank.local
+dn: CN=Administrators,CN=Builtin,DC=megabank,DC=local
+
+# Users, Builtin, megabank.local
+dn: CN=Users,CN=Builtin,DC=megabank,DC=local
+
+# S-1-5-4, ForeignSecurityPrincipals, megabank.local
+dn: CN=S-1-5-4,CN=ForeignSecurityPrincipals,DC=megabank,DC=local
+
+# S-1-5-11, ForeignSecurityPrincipals, megabank.local
+dn: CN=S-1-5-11,CN=ForeignSecurityPrincipals,DC=megabank,DC=local
+
+# Guests, Builtin, megabank.local
+dn: CN=Guests,CN=Builtin,DC=megabank,DC=local
+
+# Print Operators, Builtin, megabank.local
+dn: CN=Print Operators,CN=Builtin,DC=megabank,DC=local
+
+# Backup Operators, Builtin, megabank.local
+dn: CN=Backup Operators,CN=Builtin,DC=megabank,DC=local
+
+# Replicator, Builtin, megabank.local
+dn: CN=Replicator,CN=Builtin,DC=megabank,DC=local
+
+# Remote Desktop Users, Builtin, megabank.local
+dn: CN=Remote Desktop Users,CN=Builtin,DC=megabank,DC=local
+
+# Network Configuration Operators, Builtin, megabank.local
+dn: CN=Network Configuration Operators,CN=Builtin,DC=megabank,DC=local
+
+# Performance Monitor Users, Builtin, megabank.local
+dn: CN=Performance Monitor Users,CN=Builtin,DC=megabank,DC=local
+
+# Performance Log Users, Builtin, megabank.local
+dn: CN=Performance Log Users,CN=Builtin,DC=megabank,DC=local
+
+# Distributed COM Users, Builtin, megabank.local
+dn: CN=Distributed COM Users,CN=Builtin,DC=megabank,DC=local
+
+# IIS_IUSRS, Builtin, megabank.local
+dn: CN=IIS_IUSRS,CN=Builtin,DC=megabank,DC=local
+
+# S-1-5-17, ForeignSecurityPrincipals, megabank.local
+dn: CN=S-1-5-17,CN=ForeignSecurityPrincipals,DC=megabank,DC=local
+
+# Cryptographic Operators, Builtin, megabank.local
+dn: CN=Cryptographic Operators,CN=Builtin,DC=megabank,DC=local
+
+# Event Log Readers, Builtin, megabank.local
+dn: CN=Event Log Readers,CN=Builtin,DC=megabank,DC=local
+
+# Certificate Service DCOM Access, Builtin, megabank.local
+dn: CN=Certificate Service DCOM Access,CN=Builtin,DC=megabank,DC=local
+
+# RDS Remote Access Servers, Builtin, megabank.local
+dn: CN=RDS Remote Access Servers,CN=Builtin,DC=megabank,DC=local
+
+# RDS Endpoint Servers, Builtin, megabank.local
+dn: CN=RDS Endpoint Servers,CN=Builtin,DC=megabank,DC=local
+
+# RDS Management Servers, Builtin, megabank.local
+dn: CN=RDS Management Servers,CN=Builtin,DC=megabank,DC=local
+
+# Hyper-V Administrators, Builtin, megabank.local
+dn: CN=Hyper-V Administrators,CN=Builtin,DC=megabank,DC=local
+
+# Access Control Assistance Operators, Builtin, megabank.local
+dn: CN=Access Control Assistance Operators,CN=Builtin,DC=megabank,DC=local
+
+# Remote Management Users, Builtin, megabank.local
+dn: CN=Remote Management Users,CN=Builtin,DC=megabank,DC=local
+
+# System Managed Accounts Group, Builtin, megabank.local
+dn: CN=System Managed Accounts Group,CN=Builtin,DC=megabank,DC=local
+
+# Storage Replica Administrators, Builtin, megabank.local
+dn: CN=Storage Replica Administrators,CN=Builtin,DC=megabank,DC=local
+
+# Server, System, megabank.local
+dn: CN=Server,CN=System,DC=megabank,DC=local
+
+# RESOLUTE, Domain Controllers, megabank.local
+dn: CN=RESOLUTE,OU=Domain Controllers,DC=megabank,DC=local
+
+# krbtgt, Users, megabank.local
+dn: CN=krbtgt,CN=Users,DC=megabank,DC=local
+
+# Domain Computers, Users, megabank.local
+dn: CN=Domain Computers,CN=Users,DC=megabank,DC=local
+
+# Domain Controllers, Users, megabank.local
+dn: CN=Domain Controllers,CN=Users,DC=megabank,DC=local
+
+# Schema Admins, Users, megabank.local
+dn: CN=Schema Admins,CN=Users,DC=megabank,DC=local
+
+# Enterprise Admins, Users, megabank.local
+dn: CN=Enterprise Admins,CN=Users,DC=megabank,DC=local
+
+# Cert Publishers, Users, megabank.local
+dn: CN=Cert Publishers,CN=Users,DC=megabank,DC=local
+
+# Domain Admins, Users, megabank.local
+dn: CN=Domain Admins,CN=Users,DC=megabank,DC=local
+
+# Domain Users, Users, megabank.local
+dn: CN=Domain Users,CN=Users,DC=megabank,DC=local
+
+# Domain Guests, Users, megabank.local
+dn: CN=Domain Guests,CN=Users,DC=megabank,DC=local
+
+# Group Policy Creator Owners, Users, megabank.local
+dn: CN=Group Policy Creator Owners,CN=Users,DC=megabank,DC=local
+
+# RAS and IAS Servers, Users, megabank.local
+dn: CN=RAS and IAS Servers,CN=Users,DC=megabank,DC=local
+
+# Server Operators, Builtin, megabank.local
+dn: CN=Server Operators,CN=Builtin,DC=megabank,DC=local
+
+# Account Operators, Builtin, megabank.local
+dn: CN=Account Operators,CN=Builtin,DC=megabank,DC=local
+
+# Pre-Windows 2000 Compatible Access, Builtin, megabank.local
+dn: CN=Pre-Windows 2000 Compatible Access,CN=Builtin,DC=megabank,DC=local
+
+# Incoming Forest Trust Builders, Builtin, megabank.local
+dn: CN=Incoming Forest Trust Builders,CN=Builtin,DC=megabank,DC=local
+
+# Windows Authorization Access Group, Builtin, megabank.local
+dn: CN=Windows Authorization Access Group,CN=Builtin,DC=megabank,DC=local
+
+# Terminal Server License Servers, Builtin, megabank.local
+dn: CN=Terminal Server License Servers,CN=Builtin,DC=megabank,DC=local
+
+# S-1-5-9, ForeignSecurityPrincipals, megabank.local
+dn: CN=S-1-5-9,CN=ForeignSecurityPrincipals,DC=megabank,DC=local
+
+# 6E157EDF-4E72-4052-A82A-EC3F91021A22, Operations, DomainUpdates, System, mega
+ bank.local
+dn: CN=6E157EDF-4E72-4052-A82A-EC3F91021A22,CN=Operations,CN=DomainUpdates,CN=
+ System,DC=megabank,DC=local
+
+# Allowed RODC Password Replication Group, Users, megabank.local
+dn: CN=Allowed RODC Password Replication Group,CN=Users,DC=megabank,DC=local
+
+# Denied RODC Password Replication Group, Users, megabank.local
+dn: CN=Denied RODC Password Replication Group,CN=Users,DC=megabank,DC=local
+
+# Read-only Domain Controllers, Users, megabank.local
+dn: CN=Read-only Domain Controllers,CN=Users,DC=megabank,DC=local
+
+# Enterprise Read-only Domain Controllers, Users, megabank.local
+dn: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=megabank,DC=local
+
+# Cloneable Domain Controllers, Users, megabank.local
+dn: CN=Cloneable Domain Controllers,CN=Users,DC=megabank,DC=local
+
+# Protected Users, Users, megabank.local
+dn: CN=Protected Users,CN=Users,DC=megabank,DC=local
+
+# Key Admins, Users, megabank.local
+dn: CN=Key Admins,CN=Users,DC=megabank,DC=local
+
+# Enterprise Key Admins, Users, megabank.local
+dn: CN=Enterprise Key Admins,CN=Users,DC=megabank,DC=local
+
+# RID Manager$, System, megabank.local
+dn: CN=RID Manager$,CN=System,DC=megabank,DC=local
+
+# RID Set, RESOLUTE, Domain Controllers, megabank.local
+dn: CN=RID Set,CN=RESOLUTE,OU=Domain Controllers,DC=megabank,DC=local
+
+# DnsAdmins, Users, megabank.local
+dn: CN=DnsAdmins,CN=Users,DC=megabank,DC=local
+
+# DnsUpdateProxy, Users, megabank.local
+dn: CN=DnsUpdateProxy,CN=Users,DC=megabank,DC=local
+
+# MicrosoftDNS, System, megabank.local
+dn: CN=MicrosoftDNS,CN=System,DC=megabank,DC=local
+
+# RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megabank,DC=local
+
+# @, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=@,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megabank,DC=local
+
+# A.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=A.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# B.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=B.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# C.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=C.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# D.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=D.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# E.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=E.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# F.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=F.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# G.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=G.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# H.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=H.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# I.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=I.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# J.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=J.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# K.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=K.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# L.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=L.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# M.ROOT-SERVERS.NET, RootDNSServers, MicrosoftDNS, System, megabank.local
+dn: DC=M.ROOT-SERVERS.NET,DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=megab
+ ank,DC=local
+
+# DFSR-GlobalSettings, System, megabank.local
+dn: CN=DFSR-GlobalSettings,CN=System,DC=megabank,DC=local
+
+# Domain System Volume, DFSR-GlobalSettings, System, megabank.local
+dn: CN=Domain System Volume,CN=DFSR-GlobalSettings,CN=System,DC=megabank,DC=lo
+ cal
+
+# Content, Domain System Volume, DFSR-GlobalSettings, System, megabank.local
+dn: CN=Content,CN=Domain System Volume,CN=DFSR-GlobalSettings,CN=System,DC=meg
+ abank,DC=local
+
+# SYSVOL Share, Content, Domain System Volume, DFSR-GlobalSettings, System, meg
+ abank.local
+dn: CN=SYSVOL Share,CN=Content,CN=Domain System Volume,CN=DFSR-GlobalSettings,
+ CN=System,DC=megabank,DC=local
+
+# Topology, Domain System Volume, DFSR-GlobalSettings, System, megabank.local
+dn: CN=Topology,CN=Domain System Volume,CN=DFSR-GlobalSettings,CN=System,DC=me
+ gabank,DC=local
+
+# DC, Topology, Domain System Volume, DFSR-GlobalSettings, System, megabank.loc
+ al
+dn: CN=DC,CN=Topology,CN=Domain System Volume,CN=DFSR-GlobalSettings,CN=System
+ ,DC=megabank,DC=local
+
+# DFSR-LocalSettings, RESOLUTE, Domain Controllers, megabank.local
+dn: CN=DFSR-LocalSettings,CN=RESOLUTE,OU=Domain Controllers,DC=megabank,DC=loc
+ al
+
+# Domain System Volume, DFSR-LocalSettings, RESOLUTE, Domain Controllers, megab
+ ank.local
+dn: CN=Domain System Volume,CN=DFSR-LocalSettings,CN=RESOLUTE,OU=Domain Contro
+ llers,DC=megabank,DC=local
+
+# SYSVOL Subscription, Domain System Volume, DFSR-LocalSettings, RESOLUTE, Doma
+ in Controllers, megabank.local
+dn: CN=SYSVOL Subscription,CN=Domain System Volume,CN=DFSR-LocalSettings,CN=RE
+ SOLUTE,OU=Domain Controllers,DC=megabank,DC=local
+
+# Service-Accounts, megabank.local
+dn: OU=Service-Accounts,DC=megabank,DC=local
+
+# Groups, megabank.local
+dn: OU=Groups,DC=megabank,DC=local
+
+# Contractors, Groups, megabank.local
+dn: CN=Contractors,OU=Groups,DC=megabank,DC=local
+
+# MS02, Computers, megabank.local
+dn: CN=MS02,CN=Computers,DC=megabank,DC=local
+
+# BCKUPKEY_35534c7b-54ea-4e03-8d0a-8e79f58db08a Secret, System, megabank.local
+dn: CN=BCKUPKEY_35534c7b-54ea-4e03-8d0a-8e79f58db08a Secret,CN=System,DC=megab
+ ank,DC=local
+
+# BCKUPKEY_P Secret, System, megabank.local
+dn: CN=BCKUPKEY_P Secret,CN=System,DC=megabank,DC=local
+
+# BCKUPKEY_16defc52-8527-4d64-9dd7-4c4fd9fb477a Secret, System, megabank.local
+dn: CN=BCKUPKEY_16defc52-8527-4d64-9dd7-4c4fd9fb477a Secret,CN=System,DC=megab
+ ank,DC=local
+
+# BCKUPKEY_PREFERRED Secret, System, megabank.local
+dn: CN=BCKUPKEY_PREFERRED Secret,CN=System,DC=megabank,DC=local
+
+# S-1-5-7, ForeignSecurityPrincipals, megabank.local
+dn: CN=S-1-5-7,CN=ForeignSecurityPrincipals,DC=megabank,DC=local
+
+# S-1-1-0, ForeignSecurityPrincipals, megabank.local
+dn: CN=S-1-1-0,CN=ForeignSecurityPrincipals,DC=megabank,DC=local
+
+# MegaBank Users, megabank.local
+dn: OU=MegaBank Users,DC=megabank,DC=local
+
+# Employees, MegaBank Users, megabank.local
+dn: OU=Employees,OU=MegaBank Users,DC=megabank,DC=local
+
+# Contractors, MegaBank Users, megabank.local
+dn: OU=Contractors,OU=MegaBank Users,DC=megabank,DC=local
+
+# Ryan Bertrand, Contractors, MegaBank Users, megabank.local
+dn: CN=Ryan Bertrand,OU=Contractors,OU=MegaBank Users,DC=megabank,DC=local
+
+# Marko Novak, Employees, MegaBank Users, megabank.local
+dn: CN=Marko Novak,OU=Employees,OU=MegaBank Users,DC=megabank,DC=local
+
+# Sunita Rahman, Users, megabank.local
+dn: CN=Sunita Rahman,CN=Users,DC=megabank,DC=local
+
+# Abigail Jeffers, Users, megabank.local
+dn: CN=Abigail Jeffers,CN=Users,DC=megabank,DC=local
+
+# Marcus Strong, Users, megabank.local
+dn: CN=Marcus Strong,CN=Users,DC=megabank,DC=local
+
+# Sally May, Users, megabank.local
+dn: CN=Sally May,CN=Users,DC=megabank,DC=local
+
+# Fred Carr, Users, megabank.local
+dn: CN=Fred Carr,CN=Users,DC=megabank,DC=local
+
+# Angela Perkins, Users, megabank.local
+dn: CN=Angela Perkins,CN=Users,DC=megabank,DC=local
+
+# Felicia Carter, Users, megabank.local
+dn: CN=Felicia Carter,CN=Users,DC=megabank,DC=local
+
+# Gustavo Pallieros, Users, megabank.local
+dn: CN=Gustavo Pallieros,CN=Users,DC=megabank,DC=local
+
+# Ulf Berg, Users, megabank.local
+dn: CN=Ulf Berg,CN=Users,DC=megabank,DC=local
+
+# Stevie Gerrard, Users, megabank.local
+dn: CN=Stevie Gerrard,CN=Users,DC=megabank,DC=local
+
+# Claire Norman, Users, megabank.local
+dn: CN=Claire Norman,CN=Users,DC=megabank,DC=local
+
+# Paulo Alcobia, Users, megabank.local
+dn: CN=Paulo Alcobia,CN=Users,DC=megabank,DC=local
+
+# Steve Rider, Users, megabank.local
+dn: CN=Steve Rider,CN=Users,DC=megabank,DC=local
+
+# Annette Nilsson, Users, megabank.local
+dn: CN=Annette Nilsson,CN=Users,DC=megabank,DC=local
+
+# Annika Larson, Users, megabank.local
+dn: CN=Annika Larson,CN=Users,DC=megabank,DC=local
+
+# Per Olsson, Users, megabank.local
+dn: CN=Per Olsson,CN=Users,DC=megabank,DC=local
+
+# Claude Segal, Users, megabank.local
+dn: CN=Claude Segal,CN=Users,DC=megabank,DC=local
+
+# Melanie Purkis, Users, megabank.local
+dn: CN=Melanie Purkis,CN=Users,DC=megabank,DC=local
+
+# Zach Armstrong, Users, megabank.local
+dn: CN=Zach Armstrong,CN=Users,DC=megabank,DC=local
+
+# Simon Faraday, Users, megabank.local
+dn: CN=Simon Faraday,CN=Users,DC=megabank,DC=local
+
+# Naoki Yamamoto, Users, megabank.local
+dn: CN=Naoki Yamamoto,CN=Users,DC=megabank,DC=local
+
+# search reference
+ref: ldap://ForestDnsZones.megabank.local/DC=ForestDnsZones,DC=megabank,DC=loc
+ al
+
+# search reference
+ref: ldap://DomainDnsZones.megabank.local/DC=DomainDnsZones,DC=megabank,DC=loc
+ al
+
+# search reference
+ref: ldap://megabank.local/CN=Configuration,DC=megabank,DC=local
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 274
+# numEntries: 270
+# numReferences: 3

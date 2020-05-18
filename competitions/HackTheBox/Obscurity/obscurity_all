@@ -1,0 +1,11 @@
+# Nmap 7.80 scan initiated Wed Mar 18 07:29:17 2020 as: nmap -oN obscurity_all -p 1-65535 10.10.10.168
+Nmap scan report for 10.10.10.168
+Host is up (0.11s latency).
+Not shown: 65531 filtered ports
+PORT     STATE  SERVICE
+22/tcp   open   ssh
+80/tcp   closed http
+8080/tcp open   http-proxy
+9000/tcp closed cslistener
+
+# Nmap done at Wed Mar 18 07:31:57 2020 -- 1 IP address (1 host up) scanned in 159.80 seconds

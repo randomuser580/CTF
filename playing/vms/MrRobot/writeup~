@@ -1,7 +1,0 @@
-upon joining you have 5 commands and its a web server. First thing I did was try all commands and check for others. After feeling there were no more hidden commands, i quickly checked for the robots.txt file which had a file called "key-1-of-3.txt" which i went to and got the first key: 073403c8a58a1f80d943455fb30724b9.
-
-There is another page on here called "fsocity.dic" which is C source code:
-Looking through the file I notice a few interesting strings which look like a key format and try to base64 decompile them because I see base64 hidden in here as well.
-1. 420de201d783fbe27a74325dfea1023b
-   �m{m5w�7}������n]}���m
-This looks like a standard ctf flag format but might not be anything.
